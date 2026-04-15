@@ -62,6 +62,27 @@ void chercher_etudiant(etudiant list[],int *nbr_etudiant ){
         printf("aucun etudiant touve !");
     }
 }
+void supprimer_etudiant(etudiant list[],int *nbr_etudiant){
+    char etudiant_supp[50];
+    int trouve =0;
+    printf("entrer le nom de l'etudiant a supprimer: ");
+    scanf("%s",etudiant_supp);
+    int i;
+    for(i=0;i<*nbr_etudiant;i++){
+        if(strcmp(list[i].nom,etudiant_supp)==0){
+            for(int j=i;j<*nbr_etudiant-1;j++){
+                list[j]=list[j+1];
+
+            }
+            (*nbr_etudiant)--;
+             trouve=1;
+            printf("Etudiant supprime avec succes!");
+            return;
+        }}
+        if(!trouve){
+            printf("Etudiant introuvable !");
+        }
+}
 
 int main(){
     etudiant list[1000];
