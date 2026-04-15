@@ -41,6 +41,28 @@ void afficher_etudiant(etudiant list[],int *nbr_etudiant){
         }
 }
 
+void chercher_etudiant(etudiant list[],int *nbr_etudiant ){
+    char nom[50];
+    int trouve=0;
+    int i;
+    printf("Entrer le nom d etudiant :");
+    scanf("%s",nom);
+    for(i=0;i<*nbr_etudiant;i++){
+    if(strcmp(nom, list[i].nom)==0){
+     printf("etudiant %d ",i+1);
+        printf("\nNom\t%s ",list[i].nom);
+        printf("\nPrenom\t%s ",list[i].prenom);
+        printf("\nAge\t%d ",list[i].age);
+        printf("\nMoyenne\t%.2lf ",list[i].moyenne);
+        printf("\n");
+        trouve=1;
+        break;}
+    }
+    if(!trouve){
+        printf("aucun etudiant touve !");
+    }
+}
+
 int main(){
     etudiant list[1000];
     int choix;
