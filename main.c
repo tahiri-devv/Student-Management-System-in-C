@@ -25,6 +25,22 @@ void ajouter_etudiant(etudiant list[],int *nbr_etudiant ){
     printf("\etudiant ajoutee !");}
 
 
+void afficher_etudiant(etudiant list[],int *nbr_etudiant){
+    printf(" ===Liste etudiant=== ");
+    int i;
+    if(*nbr_etudiant==0){
+        printf("aucun etudiant dans la liste !");
+    }
+    for(i=0;i<*nbr_etudiant;i++){
+        printf("etudiant %d ",i+1);
+        printf("\nNom\t%s ",list[i].nom);
+        printf("\nPrenom\t%s ",list[i].prenom);
+        printf("\nAge\t%d ",list[i].age);
+        printf("\nMoyenne\t%.2lf ",list[i].moyenne);
+        printf("\n");
+        }
+}
+
 int main(){
     etudiant list[1000];
     int choix;
