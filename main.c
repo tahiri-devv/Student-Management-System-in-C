@@ -9,6 +9,22 @@ typedef struct
     double moyenne;
 } etudiant ;
 
+void  ajouter_etudiant(etudiant list[], int *nbr_etudiant);
+void ajouter_etudiant(etudiant list[],int *nbr_etudiant ){
+    printf("ajouter un etudiant !");
+    int i;
+    printf("\nNom     : ");
+    scanf("%s",list[*nbr_etudiant].nom);
+    printf("\nPrenom  : ");
+    scanf("%s",list[*nbr_etudiant].prenom);
+    printf("\nage     : ");
+    scanf("%d",&list[*nbr_etudiant].age);
+    printf("\nmoyenne : ");
+    scanf("%lf",&list[*nbr_etudiant].moyenne);
+    (*nbr_etudiant)++;
+    printf("\etudiant ajoutee !");}
+
+
 int main(){
     etudiant list[1000];
     int choix;
